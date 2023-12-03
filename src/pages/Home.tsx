@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getPosts } from "../api";
-import { Posts } from "../components";
+import { Navbar, Posts } from "../components";
 import { Spinner } from "react-bootstrap";
 import { IResPostData } from "../interface";
 
@@ -23,10 +23,13 @@ export default function Home() {
   if (error) return <div>An error occurred: {error.message}</div>;
 
   return (
-    <ul>
-      {posts?.map((item: IResPostData) => (
-        <Posts key={item.id} post={item} />
-      ))}
-    </ul>
+    <>
+      <Navbar />
+      <ul>
+        {posts?.map((item: IResPostData) => (
+          <Posts key={item.id} post={item} />
+        ))}
+      </ul>
+    </>
   );
 }

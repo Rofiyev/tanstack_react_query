@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getPost, getUser } from "../api";
 import { Spinner } from "react-bootstrap";
+import { Navbar } from "../components";
 
 export default function PostDetail() {
   const { id } = useParams();
@@ -47,12 +48,14 @@ export default function PostDetail() {
 
   return (
     <div>
+      <Navbar />
       {statusPost === "success" && (
         <>
           <h4 style={{ textAlign: "center" }}>Post title</h4>
           <p style={{ textAlign: "center" }}>
             {post.title.charAt(0).toUpperCase() + post.title.slice(1)}
           </p>
+          <p>{post.body.charAt(0).toUpperCase() + post.title.slice(1)}</p>
         </>
       )}
       <hr />

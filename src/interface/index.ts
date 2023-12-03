@@ -20,7 +20,7 @@ export interface IResUserData {
 }
 
 export interface IResPostData {
-  completed: boolean;
+  body: string;
   id: number;
   title: string;
   userId: number;
