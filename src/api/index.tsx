@@ -24,7 +24,7 @@ export async function getPosts() {
 
 export async function getPost(id: number) {
   const { data } = await axios.get<IResPostData>(
-    `https://jsonplaceholder.typicode.com/post/${id}`
+    `https://jsonplaceholder.typicode.com/posts/${id}`
   );
   return data;
 }
